@@ -5,10 +5,11 @@ app = Flask(__name__)
 
 # In-memory database for demonstration
 tasks = [
-    {"id": str(uuid.uuid4()), "title": "Design Premium UI", "completed": True},
-    {"id": str(uuid.uuid4()), "title": "Implement Flask Backend", "completed": False},
-    {"id": str(uuid.uuid4()), "title": "Add Micro-animations", "completed": False},
+    {"id": str(uuid.uuid4()), "title": "Task 1", "completed": True},
+    {"id": str(uuid.uuid4()), "title": "Task 2", "completed": False},
+    {"id": str(uuid.uuid4()), "title": "Task 3", "completed": False},
 ]
+
 
 @app.route("/")
 def index():
