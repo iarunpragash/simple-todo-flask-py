@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTask | Premium Task Dashboard</title>
+    <meta name="description" content="A premium, interactive task management dashboard built with Python and Flask.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NexTask Dashboard</h1>
+            <p class="subtitle">Experience the next generation of task management.</p>
+        </header>
+
+        <main class="card">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+                <button class="add-btn" id="add-btn">
+                    <span>Add Task</span>
+                </button>
+            </div>
+
+            <div class="task-list" id="task-list">
+                <!-- Tasks will be injected here -->
+            </div>
+
+            <div class="stats">
+                <div>Total Tasks: <span id="total-count" class="stat-value">0</span></div>
+                <div>Completed: <span id="completed-count" class="stat-value">0</span></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
