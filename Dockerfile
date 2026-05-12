@@ -12,4 +12,4 @@ ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 5001
 
-CMD ["python", "run"]
+CMD ["python", "app.py"]
