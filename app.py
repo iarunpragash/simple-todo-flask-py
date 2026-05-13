@@ -27,7 +27,24 @@ tasks = [
         "due_date": "2026-05-25",
         "completed": False
     },
+
+    {
+        "id": str(uuid.uuid4()), 
+        "title": "Light Theme 2", 
+        "description": "Add support for light mode using CSS variables.",
+        "due_date": "2026-05-29",
+        "completed": False
+    },
+
+     {
+        "id": str(uuid.uuid4()), 
+        "title": "Light Theme 2", 
+        "description": "Add support for light mode using CSS variables.",
+        "due_date": "2026-05-30",
+        "completed": False
+    },
 ]
+
 
 
 @app.route("/")
