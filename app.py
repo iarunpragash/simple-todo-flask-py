@@ -10,21 +10,21 @@ tasks = [
         "id": str(uuid.uuid4()), 
         "title": "Design System", 
         "description": "Create a comprehensive design system for the dashboard.",
-        "due_date": "2024-05-20",
+        "due_date": "2026-05-14",
         "completed": True
     },
     {
         "id": str(uuid.uuid4()), 
         "title": "API Integration", 
         "description": "Connect the frontend with the Flask backend routes.",
-        "due_date": "2024-05-22",
+        "due_date": "2026-05-22",
         "completed": False
     },
     {
         "id": str(uuid.uuid4()), 
         "title": "Light Theme Implementation", 
         "description": "Add support for light mode using CSS variables.",
-        "due_date": "2024-05-25",
+        "due_date": "2026-05-25",
         "completed": False
     },
 ]
