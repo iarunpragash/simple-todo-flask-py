@@ -14,13 +14,31 @@
 <body>
     <div class="container">
         <header>
-            <h1>NexTask Dashboard</h1>
-            <p class="subtitle">Experience the next generation of task management.</p>
+            <div class="header-content">
+                <h1>NexTask Dashboard</h1>
+                <p class="subtitle">Experience the next generation of task management.</p>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i data-lucide="moon"></i>
+            </button>
         </header>
 
         <main class="card">
-            <div class="input-group">
-                <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+            <div class="input-section">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="task-input">Task Title</label>
+                        <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+                    </div>
+                    <div class="input-group" style="flex: 0 0 200px;">
+                        <label for="task-date">Due Date</label>
+                        <input type="date" id="task-date">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="task-description">Description (Optional)</label>
+                    <textarea id="task-description" placeholder="Add some details about this task..."></textarea>
+                </div>
                 <button class="add-btn" id="add-btn">
                     <span>Add Task</span>
                 </button>

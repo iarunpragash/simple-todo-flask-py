@@ -1,13 +1,32 @@
 import uuid
+# pyrefly: ignore [missing-import]
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
 # In-memory database for demonstration
 tasks = [
-    {"id": str(uuid.uuid4()), "title": "Task 1", "completed": True},
-    {"id": str(uuid.uuid4()), "title": "Task 2", "completed": False},
-    {"id": str(uuid.uuid4()), "title": "Task 3", "completed": False},
+    {
+        "id": str(uuid.uuid4()), 
+        "title": "Design System", 
+        "description": "Create a comprehensive design system for the dashboard.",
+        "due_date": "2024-05-20",
+        "completed": True
+    },
+    {
+        "id": str(uuid.uuid4()), 
+        "title": "API Integration", 
+        "description": "Connect the frontend with the Flask backend routes.",
+        "due_date": "2024-05-22",
+        "completed": False
+    },
+    {
+        "id": str(uuid.uuid4()), 
+        "title": "Light Theme Implementation", 
+        "description": "Add support for light mode using CSS variables.",
+        "due_date": "2024-05-25",
+        "completed": False
+    },
 ]
 
 
@@ -28,6 +47,8 @@ def add_task():
     new_task = {
         "id": str(uuid.uuid4()),
         "title": data["title"],
+        "description": data.get("description", ""),
+        "due_date": data.get("due_date", ""),
         "completed": False
     }
     tasks.insert(0, new_task)
