@@ -71,6 +71,48 @@ Then open:
 http://localhost:5001
 ```
 
+## CI/CD with Jenkins
+
+This project uses Jenkins for automated continuous integration and deployment.
+
+### Pipeline Overview
+
+The Jenkins pipeline (`Jenkinsfile`) includes three main stages:
+
+1. **Clean Environment**
+   - Prunes Docker system to remove unused images and containers
+   - Ensures a clean slate for each build
+
+2. **Build App**
+   - Builds a Docker image tagged as `flask-todo-v2`
+   - Uses the `Dockerfile` configuration
+
+3. **Deploy to Production**
+   - Stops and removes any existing container named `todo-container-v2`
+   - Runs the newly built Docker image
+   - Maps port `5002` (external) to `5001` (container port)
+   - Application is accessible at `http://localhost:5002`
+
+### Pipeline Execution
+
+The pipeline runs automatically on each commit and provides:
+- **Success notification**: Logged when the pipeline completes successfully
+- **Failure notification**: Logged if any stage fails
+- **Always executed**: Final notification on completion regardless of outcome
+
+### Prerequisites for Jenkins
+
+- Jenkins server with Docker plugin installed
+- Docker daemon running on the Jenkins agent
+- Repository access configured in Jenkins
+
+### Running the Pipeline
+
+Simply commit to the repository. Jenkins will automatically:
+1. Detect the change
+2. Execute the Jenkinsfile
+3. Build and deploy the application
+
 ## API Endpoints
 
 - `GET /api/tasks`
